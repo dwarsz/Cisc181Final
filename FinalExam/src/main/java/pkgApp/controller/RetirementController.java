@@ -116,8 +116,10 @@ public class RetirementController implements Initializable {
 		txtYearsToWork.clear();
 		txtYearsToWork.setDisable(false);
 
-		// TODO: Clear, enable the rest of the input controls. Hint! You already have a
-		// HashMap of all the input controls....!!!!
+		for(TextField k: hmTextFieldRegEx.keySet()) {
+			k.clear();
+			k.setDisable(false);
+		}
 	}
 
 	@FXML
@@ -131,5 +133,15 @@ public class RetirementController implements Initializable {
 		// TODO: Calculate txtWhatYouNeedToSave value...
 		// TODO: Then calculate txtSaveEachMonth, using amount from txtWhatYouNeedToSave
 		// as input
+		
+		Retirement r = new Retirement (Integer.parseInt(txtYearsToWork.getText()), 
+									   Double.parseDouble(txtAnnualReturnWorking.getText()),
+									   Integer.parseInt(txtYearsRetired.getText()),
+									   Double.parseDouble(txtAnnualReturnRetired.getText()),
+									   Double.parseDouble(txtRequiredIncome.getText()),
+									   Double.parseDouble(txtMonthlySSI.getText()));
+		
+		txtWhatYouNeedToSave.setText(""+ r.TotalAmountToSave());
+		txtSaveEachMonth.setText("" + r.MonthlySavings());
 	}
 }

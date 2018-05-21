@@ -21,20 +21,22 @@ public class Retirement {
 		this.dRequiredIncome = dRequiredIncome;
 		this.dMonthlySSI = dMonthlySSI;
 	}
-
+	//Multiply the amount you borrow by the annual interest rate. Then divide by the number of payments per year. 
+	
 	public double MonthlySavings() {
-
-		//TODO: Calculate AmountToSave
+		
+		
 		double pmt = 0; // <-- this should be fixed to calculate the real pmt
-		return pmt;
+		pmt = PMT((dAnnualReturnWorking/100)/12, iYearsToWork*12,0, TotalAmountToSave(), false);
+		pmt = Math.round(pmt*100.0)/100.0;
+		return Math.abs(pmt);
 	}
 
 	public double TotalAmountToSave() {
-		
-		//TODO: Calculate the Total Amount Requried to save
 		double pv = 0;
+		pv = PV(( dAnnualReturnWorking/100)/12, iYearsRetired*12, (dRequiredIncome - dMonthlySSI), 0, false);
 		//	Hint: Here's how to round a number: pv = Math.round(pv * 100.0) / 100.0;
-		return pv;
+		return Math.abs(pv);
 	}
 
 	public static double PMT(double r, double n, double p, double f, boolean t) {
