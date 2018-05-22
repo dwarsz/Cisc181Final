@@ -68,11 +68,17 @@ public class RetirementController implements Initializable {
 	//	hmTextFieldRegEx.put(txtYearsToWork, "\\d*?");
 		//hmTextFieldRegEx.put(txtAnnualReturnWorking, "\\d*(\\.\\d*)?");d
 
-		hmTextFieldRegEx.put(txtYearsToWork, "[0-9]| 1[0-9]| 2[0-9]| 3[0-9]| 4[0]");
-		hmTextFieldRegEx.put(txtAnnualReturnWorking, "[0-9](\\.[0-9]{1,2}){0,1}|10(\\.0{1,2}){0,1}");
-		hmTextFieldRegEx.put(txtYearsRetired, "[0-9]| 1[0-9]| 2[0-9]");
+		hmTextFieldRegEx.put(txtYearsToWork, "[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0]");
+		
+		hmTextFieldRegEx.put(txtAnnualReturnWorking,"[0-9](\\.[0-9]{1,2}){0,1}|10(\\.0{1,2}){0,1}");
+		
+		hmTextFieldRegEx.put(txtYearsRetired, "[0-9]|1[0-9]|2[0]"); 
+		
 		hmTextFieldRegEx.put(txtAnnualReturnRetired, "[0-9](\\.[0-9]{1,2}){0,1}|10(\\.0{1,2}){0,1}");
 		
+		hmTextFieldRegEx.put(txtRequiredIncome, "2[6-9][4-9][2-9]|3[0-9][0-9][0-9]|4[0-9][0-9][0-9]|5[0-9][0-9][0-9]|6[0-9][0-9][0-9]|7[0-9][0-9][0-9]|8[0-9][0-9][0-9]|9[0-9][0-9][0-9]|1[0][0][0][0]");
+		
+		hmTextFieldRegEx.put(txtMonthlySSI, "[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9]|1[0-9][0-9]|2[0-9][0-9]|3[0-9][0-9]|4[0-9][0-9]|5[0-9][0-9]|6[0-9][0-9]|7[0-9][0-9]|8[0-9][0-9]|9[0-9][0-9]|1[0-9][0-9][0-9]|2[0-6][0-4][0-2]");                                   
 		
 		// Check out these pages (how to validate controls):
 		// https://stackoverflow.com/questions/30935279/javafx-input-validation-textfield

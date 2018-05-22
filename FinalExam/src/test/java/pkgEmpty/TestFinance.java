@@ -50,6 +50,7 @@ public class TestFinance {
 		double dPV = Retirement.PV(dAnnualReturnRetired / 12, iYearsRetired * 12, dRequiredIncome - dMonthlySSI, 0, false);
 		
 		double PMT = Retirement.PMT(dAnnualReturnWorking/12, iYearsToWork*12, 0,dPV, false);
+		
 		System.out.println(PMT);
 		
 		assertEquals(554.13, Math.abs(PMT),.01);

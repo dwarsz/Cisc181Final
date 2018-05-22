@@ -28,12 +28,15 @@ public class Retirement {
 		
 		double pmt = 0; // <-- this should be fixed to calculate the real pmt
 		pmt = PMT((dAnnualReturnWorking/100)/12, iYearsToWork*12,0, TotalAmountToSave(), false);
+		
 		pmt = Math.round(pmt*100.0)/100.0;
+		
 		return Math.abs(pmt);
 	}
 
 	public double TotalAmountToSave() {
 		double pv = 0;
+		
 		pv = PV(( dAnnualReturnWorking/100)/12, iYearsRetired*12, (dRequiredIncome - dMonthlySSI), 0, false);
 		//	Hint: Here's how to round a number: pv = Math.round(pv * 100.0) / 100.0;
 		return Math.abs(pv);
